@@ -5,7 +5,7 @@ const MONGOURI = "mongodb+srv://pasq:pasq@cluster0.qqked.mongodb.net/paseon?retr
 
 const InitiateMongoServer = async () => {
   try {
-    await mongoose.connect(MONGOURI, {
+    await mongoose.connect(process.env.MONGODB_URI || MONGOURI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true
