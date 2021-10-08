@@ -16,9 +16,12 @@ app.use(cors({credentials: true, origin: '*'}));
 
 //Import  Routes
 const user = require('./routes/api/user.route.js'); // Imports routes for the sendEmail
+const forms = require('./routes/api/forms.routes.js'); // Imports routes for the sendEmail
 
 //Use Routes
 app.use('/user', user);
+app.use('/forms', forms);
+
 
 
 
