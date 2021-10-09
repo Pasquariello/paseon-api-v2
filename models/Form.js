@@ -46,9 +46,9 @@ const ColumnScehma = mongoose.Schema({
 
 
 const FormSchema = mongoose.Schema({
-  id: {
-      type: String
-  },
+//   id: {
+//       type: String
+//   },
   user_id: {
     type: String,
     required: true
@@ -66,5 +66,11 @@ const FormSchema = mongoose.Schema({
     required: true
   },
 });
+
+FormSchema.virtual('id').get(function(){
+    return this._id
+});
+
+FormSchema.set('toJSON', { getters: true, virtuals: true });
 
 module.exports = mongoose.model("form", FormSchema);

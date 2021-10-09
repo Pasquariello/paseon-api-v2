@@ -39,10 +39,11 @@ exports.addForm = async function (req, res){
     try {
       console.log('Hit Add formDetails')
       console.log('req', req.body)
+      const userId = req.params.userId
       const formDetails = req.body;
      
       const form = new Form({
-          user_id: '1',
+          user_id: userId,
           name: 'new form dude',
           rows: formDetails.rows,
           columns: formDetails.columns

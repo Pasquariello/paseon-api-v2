@@ -23,7 +23,7 @@ router.get(
 
 
 router.post(
-    "/add_form",
+    "/add_form/:userId",
     // auth,
     forms_controller.addForm
 );
