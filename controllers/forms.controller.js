@@ -19,6 +19,18 @@ exports.formDetails = async function (req, res){
     }
 }
 
+exports.deleteOne = async function (req, res){ 
+    try {
+      const formId = req.params.formId;
+      // request.user is getting fetched from Middleware after token authentication
+      await Form.deleteOne(formId);
+      res.json();
+    } catch (e) {
+      console.log(e)
+      res.send({ message: "Error in Fetching user" });
+    }
+}
+
 exports.getUserForms = async function (req, res){ 
     try {
       const userId = req.params.userId

@@ -21,6 +21,12 @@ router.get(
   forms_controller.getUserForms
 );
 
+router.delete(
+  "/delete/:userId",
+  auth,
+  forms_controller.deleteOne
+);
+
 
 router.post(
     "/add_form/:userId",
