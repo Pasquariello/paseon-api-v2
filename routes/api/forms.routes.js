@@ -10,7 +10,7 @@ console.log('made it to forms router')
 const forms_controller = require('../../controllers/forms.controller');
 
 router.get(
-    "/details",
+    "/details/:formId",
     auth,
     forms_controller.formDetails
 )

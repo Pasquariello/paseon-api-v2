@@ -9,11 +9,10 @@ const Form = require("../models/Form");
 
 exports.formDetails = async function (req, res){ 
     try {
-      console.log('Hit formDetails')
+      const formId = req.params.formId;
       // request.user is getting fetched from Middleware after token authentication
-      const formDetails = await Form.findById(req.formId);
-        
-      res.json(form);
+      const formDetails = await Form.findById(formId);
+      res.json(formDetails);
     } catch (e) {
       console.log(e)
       res.send({ message: "Error in Fetching user" });
