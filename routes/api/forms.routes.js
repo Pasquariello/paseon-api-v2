@@ -18,13 +18,13 @@ router.get(
 router.get(
   "/user_form_list/:userId",
   auth,
-  forms_controller.addForm
+  forms_controller.getUserForms
 );
 
 
 router.post(
     "/add_form",
-    auth,
+    // auth,
     forms_controller.addForm
 );
   

@@ -22,9 +22,10 @@ exports.formDetails = async function (req, res){
 
 exports.getUserForms = async function (req, res){ 
     try {
-      const userId = req.query.userId
+      const userId = req.params.userId
+
       // request.user is getting fetched from Middleware after token authentication
-      const formList = await Form.find({user_id: userId }).select("_id, name,");
+      const formList = await Form.find({user_id: userId });
     
       console.log('formList', formList)
       res.json(formList);
